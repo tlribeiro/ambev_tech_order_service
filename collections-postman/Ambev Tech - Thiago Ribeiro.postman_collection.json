@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "f2c4a111-9330-4fe4-bed9-7476e6ab6211",
+		"name": "Ambev Tech - Thiago Ribeiro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "359655"
+	},
+	"item": [
+		{
+			"name": "Orders - Create Async",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"client\": \"Thiago na fila\",\n            \"refId\": \"12345\",\n            \"items\": [\n                {\n                    \"refId\": \"1\",\n                    \"name\": \"Coca-cola\",\n                    \"price\": 5.70,\n                    \"quantity\": 1\n                },\n                {\n                    \"refId\": \"1\",\n                    \"name\": \"Fanta Laranja\",\n                    \"price\": 4.70,\n                    \"quantity\": 2\n                }\n            ]\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/producers/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"producers",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orders - Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"client\": \"Thiago\",\n            \"refId\": \"1234\",\n            \"items\": [\n                {\n                    \"refId\": \"1\",\n                    \"name\": \"Coca-cola\",\n                    \"price\": 5.70,\n                    \"quantity\": 1\n                },\n                {\n                    \"refId\": \"1\",\n                    \"name\": \"Fanta Laranja\",\n                    \"price\": 4.70,\n                    \"quantity\": 2\n                }\n            ]\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orders - Find By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders/67605884f6b3503538f28483",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders",
+						"67605884f6b3503538f28483"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orders - List All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

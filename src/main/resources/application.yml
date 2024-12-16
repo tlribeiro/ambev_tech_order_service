@@ -1,0 +1,21 @@
+spring:
+  application.name: ambev-tech-order-service
+  cloud:
+    gcp:
+      pubsub:
+        emulator-host: "localhost:8086"
+        project-id: ambev-tech
+        enabled: true
+      project-id: ambev-tech
+      credentials:
+        location: file:/etc/gcp/${GCP_CREDENTIALS_FILE:ambev-tech-6c49aae234cd.json}
+  data:
+    mongodb:
+      uri: mongodb://admin:admin123@localhost:27017/pedidosdb?authSource=admin
+
+pubsub:
+  topic:
+    calculated-orders: projects/ambev-tech/topics/dev-topic-calculated-orders
+    orders-queue: projects/ambev-tech/topics/dev-topic-orders-to-calculate
+  subscription:
+    orders-queue: projects/ambev-tech/subscriptions/dev-orders-to-calculate

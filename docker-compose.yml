@@ -1,0 +1,24 @@
+services:
+
+  pubsub:
+    image: gcr.io/google.com/cloudsdktool/google-cloud-cli:latest
+    platform: linux/amd64
+    container_name: gcp-pubsub-emulator-ambev.tech
+    ports:
+      - "8086:8085"
+    command:
+      /bin/bash -c
+      "export CLOUDSDK_CORE_DISABLE_PROMPTS=1
+      && gcloud config set project emulator
+      && gcloud beta emulators pubsub start --project=ambev-tech --host-port=0.0.0.0:8085"
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-ambev.tech
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+      MONGO_INITDB_DATABASE: pedidosdb
+    command: ["--auth"]  # Habilita a autenticação
