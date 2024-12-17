@@ -13,6 +13,7 @@ As tecnologias utilizadas no projeto foram escolhidas para aumentar a capacidade
 
 Para tirar proveito de toda insfra-estrutura fornecida pelo WebFlux, com a programação reativa, foi escolhido um banco de dados que tivesse a mesma capaciedade de trabalhar com essa tecnologia.
 
+* Java 21
 * Spring boot: 3.3.6
 * Web Flux
 * Mongo DB
